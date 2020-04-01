@@ -158,5 +158,15 @@ class MagePal_GoogleTagManager_Block_Tm extends Mage_Core_Block_Template
 
         return $this->_orderCollection;
     }
+    
+    public function getDatalayerModel() {
+        return $this->_dataLayerModel;
+    }
+    
+    public function setDatalayerModel($data) {
+        // add some sanity checks here
+        $this->_dataLayerModel = $data;
+    }
+    
 
 }
