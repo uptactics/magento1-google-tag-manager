@@ -89,6 +89,7 @@ class MagePal_GoogleTagManager_Model_DataLayer extends Mage_Core_Model_Abstract 
                 $category['name'] = $_category->getName();
                 $event = new Varien_Object;
                 $event->setCategoryLayer($category);
+                $event->setCategory($_category);
                 Mage::dispatchEvent('magepal_data_layer_category', array('category_layer' => $event));
                 $category = $event->getCategoryLayer();
                 $this->addVariable('category', $category);
@@ -116,6 +117,7 @@ class MagePal_GoogleTagManager_Model_DataLayer extends Mage_Core_Model_Abstract 
             // $this->addVariable('productPrice', $_product->getPrice());
             $event = new Varien_Object;
             $event->setProductLayer($product);
+            $event->setProduct($_product);
             Mage::dispatchEvent('magepal_data_layer_product', array('product_layer' => $event));
             $product = $event->getProductLayer();
             $this->addVariable('product', $product);
